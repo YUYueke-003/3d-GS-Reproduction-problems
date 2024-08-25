@@ -45,5 +45,6 @@ Easy to understand, just switch to the directory we're now working at to the dir
 Use git command to clone a repository from GitHub pages. If you do not know what Git is, it's a version control system developed for easier version control of files on Linux system, for more details, check the offcial website of [git](https://git-scm.com/docs/user-manual.html) Here, ```git clone --recursive <url> ``` is equal to ``` git clone --recurse-submodules <url>```, to initialize and update the submodules inside the project automatically. Details can refer to [git Documentation git clone submodules](https://git-scm.com/docs/git-clone#Documentation/git-clone.txt-code--recurse-submodulescodecodecodeemltpathspecgtem) and [stackoverflow git clone submodules]
 ##### Notice:
 If you ran this line on the colab page before, there might be a problem showing as: 
-> destination path already exists and is not an empty directory
-This is because there is already a directory called _gaussian-splatting_ in your working directory, you can either remove it and rerun the command or simply skip this line of code.
+> destination path already exists and is not an empty directory 
+
+This is because there is already a directory called _gaussian-splatting_ in your working directory, you can either remove it by ```rm -rf gaussian-splatting``` and rerun the command or simply skip this line of code.
