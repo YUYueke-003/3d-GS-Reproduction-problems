@@ -55,3 +55,51 @@ This is because there is already a directory called _gaussian-splatting_ in your
 ```
 #### Explanation:
 use pip package installer for python to install the _pylfile_ module. ```pip install -q``` stands for [quiet install](https://pip.pypa.io/en/stable/cli/pip/#cmdoption-q). No problem will be encountered if you have the pip package installed, else install one.
+
+### Original Code
+```ruby
+%cd /content/gaussian-splatting
+```
+#### Explanation:
+get to the directory called _guassian-splatting_
+
+### Original Code
+```ruby
+!pip install -q /content/gaussian-splatting/submodules/diff-gaussian-rasterization
+```
+#### Explanation:
+This line is to use pip to install a project in a directory already downloaded on the computer, [local project install use pip](https://pip.pypa.io/en/stable/topics/local-project-installs/).  
+
+If you check out your directory using the ```%cd /submodules``` command at this step, you will see two directories, one is _diff-guassian-rasterization_ and the other one is _simple-knn_. 
+Look deeper into _diff-gaussian-rasterization_, you can see there is a file called _setup.py_, which contains the information of installation process, specify dependencies of the project files. 
+
+Then let's read the code in _setup.py_:
+```ruby
+from setuptools import setup
+from torch.utils.cpp_extension import CUDAExtension, BuildExtension
+import os
+os.path.dirname(os.path.abspath(__file__))
+
+setup(
+    name="diff_gaussian_rasterization",
+    packages=['diff_gaussian_rasterization'],
+    ext_modules=[
+        CUDAExtension(
+            name="diff_gaussian_rasterization._C",
+            sources=[
+            "cuda_rasterizer/rasterizer_impl.cu",
+            "cuda_rasterizer/forward.cu",
+            "cuda_rasterizer/backward.cu",
+            "rasterize_points.cu",
+            "ext.cpp"],
+            extra_compile_args={"nvcc": ["-I" + os.path.join(os.path.dirname(os.path.abspath(__file__)), "third_party/glm/")]})
+        ],
+    cmdclass={
+        'build_ext': BuildExtension
+    }
+)
+```
+A library called _setuptools_ is been included. Using with the file _pyproject.toml_, this library helps with [building and distributing packages of the project](https://www.bilibili.com/video/BV1y64y1U7cJ/?spm_id_from=333.337.search-card.all.click&vd_source=02a0a629234ac89b2b67c57092a6dada) and installer during installing the package. 
+
+
+
