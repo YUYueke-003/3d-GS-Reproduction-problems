@@ -99,7 +99,12 @@ setup(
     }
 )
 ```
-A library called _setuptools_ is been included. Using with the file _pyproject.toml_, this library helps with [building and distributing packages of the project](https://www.bilibili.com/video/BV1y64y1U7cJ/?spm_id_from=333.337.search-card.all.click&vd_source=02a0a629234ac89b2b67c57092a6dada) and installer during installing the package. 
+Analysis: ```from setuptools import setup```
+
+A library called _setuptools_ has been included in the file. This library is an enhancement of the standard template library called [_distutils_](https://zhuanlan.zhihu.com/p/276461821) (has been removed since python version 3.12, replaced by _setuptools_ and _packaging_). Using with the file _pyproject.toml_, this library helps with [building and distributing packages of the project](https://www.bilibili.com/video/BV1y64y1U7cJ/?spm_id_from=333.337.search-card.all.click&vd_source=02a0a629234ac89b2b67c57092a6dada) and installer during installing the package. More details please refer to building and [packaging](https://zhuanlan.zhihu.com/p/276461821).
+
+Analysis: ```from torch.utils.cpp_extension import CUDAExtension, BuildExtension```
+
 
 
 
