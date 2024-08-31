@@ -99,12 +99,18 @@ setup(
     }
 )
 ```
-Analysis: ```from setuptools import setup```
+__Analysis:__ ```from setuptools import setup```
 
-A library called _setuptools_ has been included in the file. This library is an enhancement of the standard template library called [_distutils_](https://zhuanlan.zhihu.com/p/276461821) (has been removed since python version 3.12, replaced by _setuptools_ and _packaging_). Using with the file _pyproject.toml_, this library helps with [building and distributing packages of the project](https://www.bilibili.com/video/BV1y64y1U7cJ/?spm_id_from=333.337.search-card.all.click&vd_source=02a0a629234ac89b2b67c57092a6dada) and installer during installing the package. More details please refer to building and [packaging](https://zhuanlan.zhihu.com/p/276461821).
+A library called [_setuptools_](https://setuptools.pypa.io/en/latest/userguide/#building-and-distributing-packages-with-setuptools) has been included in the file. This library is an enhancement of the standard template library called [_distutils_](https://docs.python.org/zh-cn/3.10/library/distutils.html)(has been removed since python version 3.12, replaced by _setuptools_ and _packaging_). Using with the file _pyproject.toml_, this library helps with building and distributing packages of the project and installer during installing the package. More details please refer to building and [packaging](https://zhuanlan.zhihu.com/p/276461821).
 
-Analysis: ```from torch.utils.cpp_extension import CUDAExtension, BuildExtension```
+__Analysis:__ ```from torch.utils.cpp_extension import CUDAExtension, BuildExtension```
 
+This line is creating a custom class _setuptools.extension_ for CUDA and Build with bare minimum arguments, and all the arguments defined later (in the bracket starting with setup) will be forwarded to the class _setuptools.extension_ constructor. Details refer to this [page](https://pytorch.org/docs/stable/cpp_extension.html#torch-utils-cpp-extension).
 
-
+__Analysis:__
+```
+import os
+os.path.dirname(os.path.abspath(__file__))
+```
+_os_ is a STL in python, stands for operating system. The next line is to get a path of a file, [```os.path.dirname(path)```](https://docs.python.org/3/library/os.path.html#os.path.dirname) to get the parent path of a path and [```os.path.abspath```](https://docs.python.org/3/library/os.path.html#os.path.abspath) to get the absolute path of a file. So here, it is used to find the parent path of the absolute path of ```__file__```, equal to give the absolute path of the directory contains the ```__file__```.
 
