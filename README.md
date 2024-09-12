@@ -1,5 +1,5 @@
 # 3d-GS-Reproduction-problems
-To record the problems I met in reproduction 3d Gaussian Splatting on Google Colab without paying credits.
+To record the problems I met in reproduction 3d Gaussian Splatting on Google Colab without paying credits. (OK, it's inpractical, but I will not delete it! I will try to figure out what the code is doing... Just forget about the viewer thing) 
 
 ### Original Colab link is here: [3D Gaussian Splatting Original Colab](https://colab.research.google.com/github/camenduru/gaussian-splatting-colab/blob/main/gaussian_splatting_colab.ipynb)
 
