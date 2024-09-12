@@ -1,15 +1,8 @@
 # 3d-GS-Reproduction-problems
 To record the problems I met in reproduction 3d Gaussian Splatting ~~on Google Colab without paying credits.~~ (OK, it's inpractical, but I will not delete it! I will try to figure out what the code is doing... Just forget about the viewer thing)
 
-## Via remote server then! (Let's start a new journey!) ##
-I connect to the remote server via SSH pubkey. In case you're like me who know nothing about remote server connection …… Let's start from the SSH connection. 
-
-### 1. Establish the SSH connection to the remote server.
-Find your ssh pubkey or generate one. See the link [here](https://www.freecodecamp.org/chinese/news/ssh-keygen-how-to-generate-an-ssh-public-key-for-rsa-login/). 
-Several things need to be noticed: When you generate your keys, only using ```ssh-keygen``` might give you several kinds of results, including "ssh-rsa", "ssh-ed22519".etc. There might be servers not working well with some kind of pubkeys(such as our lab's), so better determine the type when generate the key using ```-t rsa``` to specifically determine the type to be id_rsa ones. Also, to convenient yourself, remember to type in the place which stores your keys might not be the path you expected!!! For example, my keys were located in ```C:\SPB_Data\.ssh\id_rsa``` not as expected in ```D:\admin\username\.ssh\id_rsa```. 
-
-
-
+## Via remote server then! (Let's start a new journey!) ## 
+see in the repository of 3D-Gaussian-Splatting-reproduction.
 
 ### Original Colab link is here: [3D Gaussian Splatting Original Colab](https://colab.research.google.com/github/camenduru/gaussian-splatting-colab/blob/main/gaussian_splatting_colab.ipynb)
 
